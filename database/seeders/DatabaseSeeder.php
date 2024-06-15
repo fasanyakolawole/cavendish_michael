@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             WebsiteSeeder::class,
             CategorySeeder::class,
             RankingSeeder::class,
+            WebsiteCategoryRandomSeeder::class
         ]);
     }
 }
