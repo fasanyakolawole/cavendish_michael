@@ -1,66 +1,64 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1>Introduction</h1>
+<p>This document provides instructions for setting up and running a Laravel-based application developed as a test by Michael Fasanya.</p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<h2>Prerequisites</h2>
+<p>To run this application, ensure that your system meets the following requirements:</p>
+<ul>
+  <li>PHP version >= 8.2 installed</li>
+  <li>Composer (for PHP dependency management)</li>
+  <li>Docker (optional, if using Dockerized setup)</li>
+</ul>
 
-## About Laravel
+<h2>Setup Instructions</h2>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<ol>
+  <li><strong>Clone the Repository</strong></li>
+  <p>Clone the repository from GitHub:</p>
+  <pre><code>git clone &lt;repository-url&gt;
+cd &lt;repository-folder&gt;
+  </code></pre>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+  <li><strong>Install PHP Dependencies</strong></li>
+  <p>Install PHP dependencies using Composer:</p>
+  <pre><code>composer install
+  </code></pre>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+  <li><strong>Set Up Environment Variables</strong></li>
+  <p>Copy the <code>.env.example</code> file to <code>.env</code> and configure it according to your environment:</p>
+  <pre><code>cp .env.example .env
+  </code></pre>
 
-## Learning Laravel
+  <li><strong>Run Migrations and Seeders</strong></li>
+  <p>Run Laravel migrations to set up the database schema:</p>
+  <pre><code>php artisan migrate
+  </code></pre>
+  <p>Seed the database with sample data using Laravel Seeders:</p>
+  <pre><code>php artisan db:seed
+  </code></pre>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+  <li><strong>Using Docker (Optional)</strong></li>
+  <p>If you have Docker installed and prefer to use it, you can build and run the application with Docker:</p>
+  <p><strong>Build Docker Container</strong><br>
+  Build the Docker container using the included Dockerfile:</p>
+  <pre><code>docker build -t my-laravel-app .
+  </code></pre>
+  <p><strong>Run Docker Container</strong><br>
+  Run the Docker container:</p>
+  <pre><code>docker run -p 8000:80 my-laravel-app
+  </code></pre>
+  <p>Access the application at <a href="http://localhost:8000">http://localhost:8000</a>.</p>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+  <li><strong>Start Laravel Development Server</strong></li>
+  <p>Alternatively, you can start the Laravel development server:</p>
+  <pre><code>php artisan serve
+  </code></pre>
+  <p>Access the application at <a href="http://localhost:8000">http://localhost:8000</a>.</p>
+</ol>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<h2>Testing</h2>
+<p>To run tests, ensure your environment is set up correctly and execute PHPUnit:</p>
+<pre><code>php artisan test
+</code></pre>
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<h2>Troubleshooting</h2>
+<p>If you encounter any issues during setup or while running the application, please refer to the Laravel documentation or the repository's issue tracker on GitHub for assistance.</p>
