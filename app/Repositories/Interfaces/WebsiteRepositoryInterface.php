@@ -3,13 +3,14 @@
 namespace App\Repositories\Interfaces;
 
 use App\Models\Website;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Request;
 
 interface WebsiteRepositoryInterface
 {
-    public function getAllWebsites();
-    public function getWebsiteById($id);
-    public function createWebsite(array $data);
-    public function searchWebsite(int $category_id, int $rank);
-    public function updateWebsite($id, array $data);
-    public function deleteWebsite($id);
+    public function getWebsites(Request $request): Collection;
+
+    public function create(array $data): void;
+
+    public function delete(Website $website): void;
 }
