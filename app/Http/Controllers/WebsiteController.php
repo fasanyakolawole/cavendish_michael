@@ -8,6 +8,16 @@ use App\Services\WebsiteService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
+/*
+ * Todo: All controller should return individual DTO but time does not permit me.
+ * Todo: All needed instances od exceptions should be handles separately
+ *
+ * The only requirement left to complete is:
+ * As an authenticated user I would like to vote/unvote my favourite websites.
+ * Categories will then show them in order of how many votes
+ * they have so that the most relevant content is always at the top as time do not permit me,
+ * its basically a crud functionality.I create the migration, factory etc already
+ */
 class WebsiteController extends Controller
 {
     protected WebsiteService $websiteService;
