@@ -17,6 +17,8 @@ use Illuminate\Http\Request;
  * Categories will then show them in order of how many votes
  * they have so that the most relevant content is always at the top as time do not permit me,
  * its basically a crud functionality.I create the migration, factory etc already
+ *
+ * Users should be able to vote a website only once
  */
 class WebsiteController extends Controller
 {
