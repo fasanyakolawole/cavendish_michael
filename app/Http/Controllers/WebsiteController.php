@@ -9,8 +9,8 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 /*
- * Todo: All controller should return individual DTO but time does not permit me.
- * Todo: All needed instances od exceptions should be handles separately
+ * Todo: All controller should return individual DTO so it returns only data is needed in the frontend, but time does not permit me.
+ * Todo: All needed instances of exceptions should be handled separately
  *
  * The only requirement left to complete is:
  * As an authenticated user I would like to vote/unvote my favourite websites.
@@ -49,6 +49,8 @@ class WebsiteController extends Controller
     public function store(StoreWebsiteRequest $request): JsonResponse
     {
         $validatedData = $request->validated();
+
+        $validatedData['user_id'] = auth()->id();
 
         $this->websiteService->createWebsite($validatedData);
 

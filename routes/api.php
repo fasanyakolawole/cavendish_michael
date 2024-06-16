@@ -12,11 +12,11 @@ Route::post('login', [AuthController::class, 'login']);
 // Unauthenticated users
 Route::prefix('website')->group(function () {
     Route::get('index', [WebsiteController::class, 'index'])->name('websites.index');
-    Route::post('store', [WebsiteController::class, 'store'])->name('websites.store');
 });
 
 // Authenticated users
 Route::middleware('auth:sanctum')->group(function () {
+    Route::post('store', [WebsiteController::class, 'store'])->name('websites.store');
     Route::delete('website/{website}', [WebsiteController::class, 'delete'])
         ->name('websites.delete')
         ->middleware('admin');
