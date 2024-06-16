@@ -28,7 +28,7 @@ class WebsiteController extends Controller
     }
 
     /**
-     * Display a listing of the websites.
+     * Display a listing of the websites. Filter by category, ranking or url.
      *
      * @param Request $request
      * @return JsonResponse
